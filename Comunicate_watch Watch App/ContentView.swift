@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+// import Firebase
+
 
 struct ContentView: View {
 
@@ -51,7 +53,7 @@ struct ContentView: View {
     */  
             }
         }
-    
+    /*
       func fetchMessages() {
         let db = Firestore.firestore()
         db.collection("messages").order(by: "timestamp").addSnapshotListener { snapshot, error in
@@ -62,7 +64,7 @@ struct ContentView: View {
             messages = documents.map { $0["text"] as? String ?? "" }
         }
     }
-
+     */
     
     }
        

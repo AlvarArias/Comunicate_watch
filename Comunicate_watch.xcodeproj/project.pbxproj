@@ -15,6 +15,7 @@
 		629135C22D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C12D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift */; };
 		629135C42D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */; };
 		629135D22D01A1A5004C72F1 /* Firebase_conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135D12D01A1A5004C72F1 /* Firebase_conf.swift */; };
+		62C087DC2D01BDD20069D6F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		629135C12D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comunicate_watch_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comunicate_watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		629135D12D01A1A5004C72F1 /* Firebase_conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_conf.swift; sourceTree = "<group>"; };
+		629135D32D01A7CF004C72F1 /* README- WORK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README- WORK.md"; sourceTree = "<group>"; };
+		62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 				629135B62D01968E004C72F1 /* Comunicate_watch Watch AppTests */,
 				629135C02D01968E004C72F1 /* Comunicate_watch Watch AppUITests */,
 				629135A42D01968D004C72F1 /* Products */,
+				62C087E82D01C6DF0069D6F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,8 @@
 		629135A52D01968D004C72F1 /* Comunicate_watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				62C087DA2D01BDB10069D6F7 /* Assets */,
+				629135D32D01A7CF004C72F1 /* README- WORK.md */,
 				629135D02D01A17B004C72F1 /* Model */,
 				629135A62D01968D004C72F1 /* Comunicate_watchApp.swift */,
 				629135A82D01968D004C72F1 /* ContentView.swift */,
@@ -138,6 +144,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		62C087DA2D01BDB10069D6F7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		62C087E82D01C6DF0069D6F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +175,8 @@
 			dependencies = (
 			);
 			name = "Comunicate_watch Watch App";
+			packageProductDependencies = (
+			);
 			productName = "Comunicate_watch Watch App";
 			productReference = 629135A32D01968D004C72F1 /* Comunicate_watch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +249,8 @@
 				Base,
 			);
 			mainGroup = 6291359A2D01968D004C72F1;
+			packageReferences = (
+			);
 			productRefGroup = 629135A42D01968D004C72F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,6 +269,7 @@
 			files = (
 				629135AE2D01968E004C72F1 /* Preview Assets.xcassets in Resources */,
 				629135AB2D01968E004C72F1 /* Assets.xcassets in Resources */,
+				62C087DC2D01BDD20069D6F7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +569,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "Comunicate_watch Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -564,7 +590,7 @@
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "Comunicate_watch Watch App";
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
