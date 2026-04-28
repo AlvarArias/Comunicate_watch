@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Comunicate_watch** is a watchOS-only chat app targeting Apple Watch. There is no paired iPhone app target — all code runs directly on the watch. The app uses SwiftUI and is planned to integrate Firebase Firestore for real-time messaging.
+**Comunicate_watch** is a watchOS-only chat app targeting Apple Watch. There is no paired iPhone app target — all code runs directly on the watch. The app uses SwiftUI with Firebase Auth and Firebase Realtime Database for authentication and real-time messaging.
 
 - Swift 5.0 · watchOS 8.0+ deployment target
 - Scheme: `Comunicate_watch Watch App`
@@ -32,40 +32,73 @@ xcodebuild -project "Comunicate_watch.xcodeproj" \
   test
 ```
 
-**Run a single test:**
-```bash
-xcodebuild -project "Comunicate_watch.xcodeproj" \
-  -scheme "Comunicate_watch Watch App" \
-  -sdk watchsimulator \
-  -destination 'platform=watchOS Simulator,name=Apple Watch Series 9 (45mm)' \
-  -only-testing:Comunicate_watch_Watch_AppTests/Comunicate_watch_Watch_AppTests/testExample \
-  test
-```
-
 **Boot the watch simulator:**
 ```bash
 xcrun simctl boot "Apple Watch Series 9 (45mm)"
 ```
 
-## Architecture
+> **Note:** Use Apple Watch Series 7 or later simulator for QWERTY keyboard support. Earlier models only offer dictation/scribble input.
 
-The app has a flat structure with a single source target:
+## Architecture
 
 ```
 Comunicate_watch Watch App/
-├── Comunicate_watchApp.swift   # @main entry point, FirebaseApp.configure() goes here
-├── ContentView.swift           # Root view — chat UI (message list + send field)
+├── Comunicate_watchApp.swift   # @main entry point, FirebaseApp.configure()
+├── ContentView.swift           # Root: routes to LoginView or HomeView based on auth state
+├── LoginView.swift             # Email/password login and registration (uses Form, not ScrollView)
+├── HomeView.swift              # Main screen: create invite code or join via code
+├── ChatView.swift              # Real-time chat UI for an active chatId
 └── Model/
-    └── Firebase_conf.swift     # Placeholder for Firebase configuration helpers
+    ├── AuthModel.swift         # ObservableObject — wraps FirebaseAuth (login, register, logout)
+    ├── InviteModel.swift       # ObservableObject — invite code creation and joining via Realtime Database
+    ├── ChatModel.swift         # ObservableObject — real-time message listener via Realtime Database
+    └── Firebase_conf.swift     # Reserved for future Firebase helpers
 ```
 
-**Data flow (current):** `ContentView` holds `@State var messages: [String]` locally. `sendMessage()` appends to that array. The real Firestore implementation is commented out inline — both the write (`db.collection("messages").addDocument`) and the real-time listener (`addSnapshotListener`) exist as comments in `ContentView.swift` and just need to be uncommented once the Firebase SDK is added.
+## Navigation Flow
 
-**Firebase integration status:** The SDK is not yet installed (no `Podfile` or `Package.swift`). `import Firebase` and `FirebaseApp.configure()` are commented out in `Comunicate_watchApp.swift`. `Firebase_conf.swift` is empty and reserved for Firestore helper logic.
+```
+ContentView
+├── isLoggedIn == false → LoginView
+└── isLoggedIn == true  → HomeView
+                              ├── Crear sala → generates 6-char invite code (expires 10 min)
+                              ├── Unirse con código → resolves chatId → ChatView(chatId)
+                              └── Cerrar sesión → back to LoginView
+```
 
-## Pending Work (README-WORK.md)
+## Firebase Integration
 
-1. Add Firebase SDK via SPM and wire up Firestore for real-time messages
+**SDK:** Firebase iOS SDK 12.12.1 via SPM (`firebase-ios-sdk`)
+**Products in use:** `FirebaseAuth`, `FirebaseDatabase`
+
+> **Important:** `FirebaseFirestore` is NOT used — it lacks watchOS support due to gRPC binary dependencies. Use `FirebaseDatabase` for all data storage.
+
+**Realtime Database structure:**
+
+```
+invites/{code}
+    ownerUID: String
+    expiresAt: TimeInterval   ← Unix timestamp, deleted after successful join
+
+chats/{uid1_uid2}/messages/{autoId}
+    text: String
+    senderUID: String
+    sentAt: TimeInterval      ← Unix timestamp
+```
+
+**chatId convention:** `[uidA, uidB].sorted().joined(separator: "_")` — always deterministic regardless of who initiates.
+
+**GoogleService-Info.plist** must include `DATABASE_URL` key pointing to the Realtime Database URL (format: `https://comunicate-watch-default-rtdb.europe-west1.firebasedatabase.app`).
+
+## Known Watchos Constraints
+
+- `TextField` inside `ScrollView` does not open the text input on watchOS — always use `Form` for views with text input fields.
+- `NavigationStack` requires watchOS 9.0+; use conditional view switching for watchOS 8 compatibility.
+- `.foregroundStyle(.accent)` is unavailable on watchOS 8; use `.foregroundColor(.accentColor)`.
+
+## Pending Work
+
+1. Real-time chat messages (ChatView already has ChatModel wired — needs end-to-end testing with two users)
 2. Haptic (taptic) effects on message receive
 3. Apple Push Notifications (APNs)
 4. Google Sign In
