@@ -13,24 +13,25 @@ struct LoginView: View {
     @State private var isRegistering = false
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 8) {
-                Text(isRegistering ? "Crear cuenta" : "Iniciar sesión")
-                    .font(.headline)
-
+        Form {
+            Section {
                 TextField("Email", text: $email)
                     .textContentType(.emailAddress)
+                    .autocorrectionDisabled()
 
                 SecureField("Contraseña", text: $password)
                     .textContentType(isRegistering ? .newPassword : .password)
+            }
 
-                if !authModel.errorMessage.isEmpty {
+            if !authModel.errorMessage.isEmpty {
+                Section {
                     Text(authModel.errorMessage)
                         .font(.footnote)
                         .foregroundStyle(.red)
-                        .multilineTextAlignment(.center)
                 }
+            }
 
+            Section {
                 Button(isRegistering ? "Crear cuenta" : "Entrar") {
                     if isRegistering {
                         authModel.register(email: email, password: password)
@@ -38,17 +39,16 @@ struct LoginView: View {
                         authModel.login(email: email, password: password)
                     }
                 }
-                .buttonStyle(.borderedProminent)
                 .disabled(email.isEmpty || password.isEmpty)
 
                 Button(isRegistering ? "Ya tengo cuenta" : "Crear cuenta") {
                     isRegistering.toggle()
                     authModel.errorMessage = ""
                 }
-                .font(.footnote)
+                .foregroundStyle(.secondary)
             }
-            .padding()
         }
+        .navigationTitle(isRegistering ? "Crear cuenta" : "Iniciar sesión")
     }
 }
 
