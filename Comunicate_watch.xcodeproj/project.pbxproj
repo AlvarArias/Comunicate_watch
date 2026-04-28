@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622A7D4B2FA0F0270025428E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 622A7D4A2FA0F0270025428E /* GoogleService-Info.plist */; };
+		622A7D502FA0F1D20025428E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 622A7D4F2FA0F1D20025428E /* FirebaseAuth */; };
+		622A7D522FA0F1D20025428E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 622A7D512FA0F1D20025428E /* FirebaseFirestore */; };
+		622A7D562FA0F2D10025428E /* Firebase_conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7D542FA0F2D10025428E /* Firebase_conf.swift */; };
+		622A7D572FA0F2D10025428E /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7D532FA0F2D10025428E /* AuthModel.swift */; };
+		622A7D592FA0F36C0025428E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7D582FA0F36C0025428E /* LoginView.swift */; };
+		622A7D5B2FA0F37D0025428E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7D5A2FA0F37D0025428E /* ChatView.swift */; };
+		622A7D612FA0F4E60025428E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 622A7D602FA0F4E60025428E /* GoogleService-Info.plist */; };
 		629135A72D01968D004C72F1 /* Comunicate_watchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135A62D01968D004C72F1 /* Comunicate_watchApp.swift */; };
 		629135A92D01968D004C72F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135A82D01968D004C72F1 /* ContentView.swift */; };
 		629135AB2D01968E004C72F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629135AA2D01968E004C72F1 /* Assets.xcassets */; };
@@ -15,7 +23,6 @@
 		629135C22D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C12D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift */; };
 		629135C42D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */; };
 		629135D22D01A1A5004C72F1 /* Firebase_conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135D12D01A1A5004C72F1 /* Firebase_conf.swift */; };
-		62C087DC2D01BDD20069D6F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		622A7D4A2FA0F0270025428E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		622A7D532FA0F2D10025428E /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		622A7D542FA0F2D10025428E /* Firebase_conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_conf.swift; sourceTree = "<group>"; };
+		622A7D582FA0F36C0025428E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		622A7D5A2FA0F37D0025428E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		622A7D602FA0F4E60025428E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		629135A32D01968D004C72F1 /* Comunicate_watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comunicate_watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		629135A62D01968D004C72F1 /* Comunicate_watchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comunicate_watchApp.swift; sourceTree = "<group>"; };
 		629135A82D01968D004C72F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,7 +61,6 @@
 		629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comunicate_watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		629135D12D01A1A5004C72F1 /* Firebase_conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_conf.swift; sourceTree = "<group>"; };
 		629135D32D01A7CF004C72F1 /* README- WORK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README- WORK.md"; sourceTree = "<group>"; };
-		62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622A7D502FA0F1D20025428E /* FirebaseAuth in Frameworks */,
+				622A7D522FA0F1D20025428E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +90,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622A7D552FA0F2D10025428E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				622A7D532FA0F2D10025428E /* AuthModel.swift */,
+				622A7D542FA0F2D10025428E /* Firebase_conf.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6291359A2D01968D004C72F1 = {
 			isa = PBXGroup;
 			children = (
+				622A7D602FA0F4E60025428E /* GoogleService-Info.plist */,
+				622A7D4A2FA0F0270025428E /* GoogleService-Info.plist */,
 				629135A52D01968D004C72F1 /* Comunicate_watch Watch App */,
 				629135B62D01968E004C72F1 /* Comunicate_watch Watch AppTests */,
 				629135C02D01968E004C72F1 /* Comunicate_watch Watch AppUITests */,
@@ -100,6 +125,9 @@
 		629135A52D01968D004C72F1 /* Comunicate_watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				622A7D5A2FA0F37D0025428E /* ChatView.swift */,
+				622A7D582FA0F36C0025428E /* LoginView.swift */,
+				622A7D552FA0F2D10025428E /* Model */,
 				62C087DA2D01BDB10069D6F7 /* Assets */,
 				629135D32D01A7CF004C72F1 /* README- WORK.md */,
 				629135D02D01A17B004C72F1 /* Model */,
@@ -147,7 +175,6 @@
 		62C087DA2D01BDB10069D6F7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				62C087DB2D01BDD20069D6F7 /* GoogleService-Info.plist */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -176,6 +203,8 @@
 			);
 			name = "Comunicate_watch Watch App";
 			packageProductDependencies = (
+				622A7D4F2FA0F1D20025428E /* FirebaseAuth */,
+				622A7D512FA0F1D20025428E /* FirebaseFirestore */,
 			);
 			productName = "Comunicate_watch Watch App";
 			productReference = 629135A32D01968D004C72F1 /* Comunicate_watch Watch App.app */;
@@ -225,7 +254,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					629135A22D01968D004C72F1 = {
 						CreatedOnToolsVersion = 15.3;
@@ -250,6 +279,7 @@
 			);
 			mainGroup = 6291359A2D01968D004C72F1;
 			packageReferences = (
+				622A7D4E2FA0F1D20025428E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 629135A42D01968D004C72F1 /* Products */;
 			projectDirPath = "";
@@ -268,8 +298,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				629135AE2D01968E004C72F1 /* Preview Assets.xcassets in Resources */,
+				622A7D612FA0F4E60025428E /* GoogleService-Info.plist in Resources */,
 				629135AB2D01968E004C72F1 /* Assets.xcassets in Resources */,
-				62C087DC2D01BDD20069D6F7 /* GoogleService-Info.plist in Resources */,
+				622A7D4B2FA0F0270025428E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				622A7D592FA0F36C0025428E /* LoginView.swift in Sources */,
 				629135D22D01A1A5004C72F1 /* Firebase_conf.swift in Sources */,
+				622A7D562FA0F2D10025428E /* Firebase_conf.swift in Sources */,
+				622A7D572FA0F2D10025428E /* AuthModel.swift in Sources */,
+				622A7D5B2FA0F37D0025428E /* ChatView.swift in Sources */,
 				629135A92D01968D004C72F1 /* ContentView.swift in Sources */,
 				629135A72D01968D004C72F1 /* Comunicate_watchApp.swift in Sources */,
 			);
@@ -367,7 +402,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -389,6 +426,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -428,7 +466,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -443,6 +483,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -455,19 +496,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Comunicate_watch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 8D7GNS96P8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Comunicate_watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -486,19 +525,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Comunicate_watch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 8D7GNS96P8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Comunicate_watch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -513,11 +550,9 @@
 		629135CB2D01968E004C72F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch-Watch-AppTests";
@@ -534,11 +569,9 @@
 		629135CC2D01968E004C72F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch-Watch-AppTests";
@@ -556,10 +589,8 @@
 		629135CE2D01968E004C72F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch-Watch-AppUITests";
@@ -576,10 +607,8 @@
 		629135CF2D01968E004C72F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DDWAVNG7Q4;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.alvararias.Comunicate-watch-Watch-AppUITests";
@@ -634,6 +663,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		622A7D4E2FA0F1D20025428E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		622A7D4F2FA0F1D20025428E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 622A7D4E2FA0F1D20025428E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		622A7D512FA0F1D20025428E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 622A7D4E2FA0F1D20025428E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6291359B2D01968D004C72F1 /* Project object */;
 }

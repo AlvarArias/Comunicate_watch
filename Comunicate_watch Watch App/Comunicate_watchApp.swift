@@ -6,27 +6,21 @@
 //
 
 import SwiftUI
-//import Firebase
+import Firebase
 
 @main
 struct Comunicate_watch_Watch_AppApp: App {
 
-    /*
+    @StateObject private var authModel = AuthModel()
+
     init() {
         FirebaseApp.configure()
-        print("Firebase configured")
-    }*/
-    
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear {
-                    print("ContentView appeared")
-                }
+                .environmentObject(authModel)
         }
-        
     }
-                          
 }
-

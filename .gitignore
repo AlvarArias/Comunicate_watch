@@ -1,0 +1,22 @@
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# Firebase — nunca subir al repo
+GoogleService-Info.plist
+
+# Claude Code
+.claude/settings.local.json
