@@ -52,8 +52,36 @@ Comunicate_watch Watch App/
     ├── AuthModel.swift         # ObservableObject — wraps FirebaseAuth (login, register, logout)
     ├── InviteModel.swift       # ObservableObject — invite code creation and joining via Realtime Database
     ├── ChatModel.swift         # ObservableObject — real-time message listener via Realtime Database
+    ├── Protocols.swift         # AuthServiceProtocol, DatabaseServiceProtocol, DatabaseObserverToken
+    ├── FirebaseServices.swift  # Concrete Firebase implementations of the protocols
     └── Firebase_conf.swift     # Reserved for future Firebase helpers
 ```
+
+## Testing
+
+**Run unit tests:**
+```bash
+xcodebuild test -project "Comunicate_watch.xcodeproj" \
+  -scheme "Comunicate_watch Watch App" \
+  -destination 'platform=watchOS Simulator,name=Apple Watch Series 9 (45mm),OS=10.4' \
+  ONLY_ACTIVE_ARCH=NO
+```
+
+> **Note:** The `-sdk watchsimulator` flag alone does not work for `test` — use `-destination` with `ONLY_ACTIVE_ARCH=NO` instead.
+
+### Test architecture
+
+All models use dependency injection via `AuthServiceProtocol` and `DatabaseServiceProtocol`. Production code passes `FirebaseAuthService()` / `FirebaseDatabaseService()` by default. Tests inject `MockAuthService` / `MockDatabaseService` from `Comunicate_watch Watch AppTests/MockServices.swift` — no Firebase connection required.
+
+**Test coverage (14 cases in `Comunicate_watch_Watch_AppTests`):**
+
+| Model                      | Cases                                             |
+| -------------------------- | ------------------------------------------------- |
+| `InviteModel.createInvite` | success, no user, database error                  |
+| `InviteModel.joinInvite`   | success, expired code, own code, code uppercased  |
+| `ChatModel.sendMessage`    | empty text, no user, correct path written         |
+| `AuthModel`                | login success, login failure, logout              |
+| General                    | chatId is deterministic                           |
 
 ## Navigation Flow
 
