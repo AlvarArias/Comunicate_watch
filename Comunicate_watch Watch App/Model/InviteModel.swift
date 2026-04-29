@@ -4,18 +4,23 @@
 //
 
 import Foundation
-import FirebaseAuth
-import FirebaseDatabase
 
 class InviteModel: ObservableObject {
     @Published var generatedCode: String = ""
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
 
-    private let db = Database.database().reference()
+    private let db: DatabaseServiceProtocol
+    private let auth: AuthServiceProtocol
+
+    init(db: DatabaseServiceProtocol = FirebaseDatabaseService(),
+         auth: AuthServiceProtocol = FirebaseAuthService()) {
+        self.db = db
+        self.auth = auth
+    }
 
     func createInvite() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let uid = auth.currentUserUID else { return }
         let code = Self.generateCode()
         let expiresAt = Date().addingTimeInterval(600).timeIntervalSince1970
 
@@ -23,10 +28,7 @@ class InviteModel: ObservableObject {
         generatedCode = ""
         errorMessage = ""
 
-        db.child("invites").child(code).setValue([
-            "ownerUID": uid,
-            "expiresAt": expiresAt
-        ]) { [weak self] error, _ in
+        db.write(at: "invites/\(code)", value: ["ownerUID": uid, "expiresAt": expiresAt]) { [weak self] error in
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if let error = error {
@@ -39,19 +41,19 @@ class InviteModel: ObservableObject {
     }
 
     func joinInvite(code: String, completion: @escaping (String?) -> Void) {
-        guard let myUID = Auth.auth().currentUser?.uid else { return }
+        guard let myUID = auth.currentUserUID else { return }
         let upperCode = code.uppercased()
 
         isLoading = true
         errorMessage = ""
 
-        db.child("invites").child(upperCode).getData { [weak self] error, snapshot in
+        db.read(at: "invites/\(upperCode)") { [weak self] error, data in
             DispatchQueue.main.async {
                 self?.isLoading = false
 
                 guard
                     error == nil,
-                    let data = snapshot?.value as? [String: Any],
+                    let data = data,
                     let ownerUID = data["ownerUID"] as? String,
                     let expiresAt = data["expiresAt"] as? TimeInterval,
                     Date(timeIntervalSince1970: expiresAt) > Date()
@@ -67,7 +69,7 @@ class InviteModel: ObservableObject {
                     return
                 }
 
-                self?.db.child("invites").child(upperCode).removeValue()
+                self?.db.delete(at: "invites/\(upperCode)")
                 let chatId = [myUID, ownerUID].sorted().joined(separator: "_")
                 completion(chatId)
             }

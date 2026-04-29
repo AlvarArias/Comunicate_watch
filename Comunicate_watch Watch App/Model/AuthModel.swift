@@ -4,18 +4,20 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 
 class AuthModel: ObservableObject {
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
 
-    init() {
-        isLoggedIn = Auth.auth().currentUser != nil
+    private let auth: AuthServiceProtocol
+
+    init(auth: AuthServiceProtocol = FirebaseAuthService()) {
+        self.auth = auth
+        isLoggedIn = auth.currentUserUID != nil
     }
 
     func login(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+        auth.signIn(email: email, password: password) { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error {
                     self?.errorMessage = error.localizedDescription
@@ -28,7 +30,7 @@ class AuthModel: ObservableObject {
     }
 
     func register(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+        auth.createUser(email: email, password: password) { [weak self] error in
             DispatchQueue.main.async {
                 if let error = error {
                     self?.errorMessage = error.localizedDescription
@@ -41,7 +43,7 @@ class AuthModel: ObservableObject {
     }
 
     func logout() {
-        try? Auth.auth().signOut()
+        try? auth.signOut()
         isLoggedIn = false
     }
 }

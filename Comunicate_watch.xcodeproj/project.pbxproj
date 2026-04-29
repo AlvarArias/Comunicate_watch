@@ -26,6 +26,9 @@
 		629135C22D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C12D01968E004C72F1 /* Comunicate_watch_Watch_AppUITests.swift */; };
 		629135C42D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */; };
 		629135D22D01A1A5004C72F1 /* Firebase_conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135D12D01A1A5004C72F1 /* Firebase_conf.swift */; };
+		CC001A000000000000ABCD02 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC001A000000000000ABCD01 /* Protocols.swift */; };
+		CC001A000000000000ABCD04 /* FirebaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC001A000000000000ABCD03 /* FirebaseServices.swift */; };
+		CC001A000000000000ABCD06 /* MockServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC001A000000000000ABCD05 /* MockServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		629135C32D01968E004C72F1 /* Comunicate_watch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comunicate_watch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		629135D12D01A1A5004C72F1 /* Firebase_conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_conf.swift; sourceTree = "<group>"; };
 		629135D32D01A7CF004C72F1 /* README- WORK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README- WORK.md"; sourceTree = "<group>"; };
+		CC001A000000000000ABCD01 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CC001A000000000000ABCD03 /* FirebaseServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseServices.swift; sourceTree = "<group>"; };
+		CC001A000000000000ABCD05 /* MockServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 				622A7D542FA0F2D10025428E /* Firebase_conf.swift */,
 				27A7D860941C4DC2AE3943DD /* InviteModel.swift */,
 				710D3D51382447FBCF6FCF21 /* ChatModel.swift */,
+				CC001A000000000000ABCD01 /* Protocols.swift */,
+				CC001A000000000000ABCD03 /* FirebaseServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				629135B72D01968E004C72F1 /* Comunicate_watch_Watch_AppTests.swift */,
+				CC001A000000000000ABCD05 /* MockServices.swift */,
 			);
 			path = "Comunicate_watch Watch AppTests";
 			sourceTree = "<group>";
@@ -342,6 +351,8 @@
 				FE17BBAB91224F19A84E7BE6 /* HomeView.swift in Sources */,
 				0D139714A0C349C6A517C4F1 /* InviteModel.swift in Sources */,
 				9D4AD7FFB98048ABBCF003B9 /* ChatModel.swift in Sources */,
+				CC001A000000000000ABCD02 /* Protocols.swift in Sources */,
+				CC001A000000000000ABCD04 /* FirebaseServices.swift in Sources */,
 				629135A92D01968D004C72F1 /* ContentView.swift in Sources */,
 				629135A72D01968D004C72F1 /* Comunicate_watchApp.swift in Sources */,
 			);
@@ -352,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				629135B82D01968E004C72F1 /* Comunicate_watch_Watch_AppTests.swift in Sources */,
+				CC001A000000000000ABCD06 /* MockServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
